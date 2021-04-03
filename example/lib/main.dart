@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:breakpoints/breakpoints.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -24,29 +24,45 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final breakpoint = MediaQuery.of(context).breakpoint;
+    final data = MediaQuery.of(context);
+    final breakpoint = data.breakpoint;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Breakpoints Demo'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: breakpoint.margins / 2),
-        child: GridView.count(
-          crossAxisCount: breakpoint.columns,
-          children: List.generate(
-            100,
-            (index) => Padding(
-              padding: EdgeInsets.all(breakpoint.gutters / 2),
-              child: Card(
-                child: Center(
-                  child: Text('No.${index + 1}'),
+        appBar: AppBar(
+          title: const Text('Breakpoints Demo'),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text('Screen Size: ${data.size.toString()}'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text('Breakpoint: ${breakpoint.toString()}'),
+            ),
+            Expanded(
+              child: Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: breakpoint.margins / 2),
+                child: GridView.count(
+                  crossAxisCount: breakpoint.columns,
+                  children: List.generate(
+                    100,
+                    (index) => Padding(
+                      padding: EdgeInsets.all(breakpoint.gutters / 2),
+                      child: Card(
+                        child: Center(
+                          child: Text('No.${index + 1}'),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
+            )
+          ],
+        ));
   }
 }
