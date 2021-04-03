@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:breakpoints/breakpoints.dart';
 
 void main() {
   runApp(App());
@@ -23,17 +24,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final breakpoint = MediaQuery.of(context).breakpoint;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Breakpoints Demo'),
       ),
-      body: GridView.count(
-        crossAxisCount: 4,
-        children: List.generate(
-          100,
-          (index) => Card(
-            child: Center(
-              child: Text('No.$index'),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: breakpoint.margins / 2),
+        child: GridView.count(
+          crossAxisCount: breakpoint.columns,
+          children: List.generate(
+            100,
+            (index) => Padding(
+              padding: EdgeInsets.all(breakpoint.gutters / 2),
+              child: Card(
+                child: Center(
+                  child: Text('No.${index + 1}'),
+                ),
+              ),
             ),
           ),
         ),

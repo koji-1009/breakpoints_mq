@@ -1,7 +1,5 @@
-library breakpoints;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/breakpoint.dart';
+export 'src/breakpoints_enum.dart';
+export 'src/breakpoints_enum_ext.dart';
+export 'src/breakpoints_media_query_ext.dart';
+export 'src/breakpoints_operator_ext.dart';

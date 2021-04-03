@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  breakpoints:
+    path: ../
 
 flutter:
   uses-material-design: true
