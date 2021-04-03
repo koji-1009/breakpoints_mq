@@ -1,0 +1,18 @@
+name: PullRequest
+
+on: pull_request
+
+jobs:
+  test:
+    name: run flutter test
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+
+      - run: flutter pub get
+      - run: flutter test
