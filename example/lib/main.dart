@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:breakpoints/breakpoints.dart';
+import 'package:breakpoints_mq/breakpoints_mq.dart';
 
 void main() {
   runApp(const App());

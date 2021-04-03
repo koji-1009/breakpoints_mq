@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../breakpoints.dart';
+import '../breakpoints_mq.dart';
 
 /// Entity object for Breakpoint system.
 ///

@@ -1,5 +1,5 @@
-import 'package:breakpoints/src/breakpoints_enum.dart';
-import 'package:breakpoints/src/breakpoints_operator_ext.dart';
+import 'package:breakpoints_mq/src/breakpoints_enum.dart';
+import 'package:breakpoints_mq/src/breakpoints_operator_ext.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
