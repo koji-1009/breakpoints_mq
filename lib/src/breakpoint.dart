@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../breakpoints.dart';
 
 /// Entity object for Breakpoint system.
@@ -25,4 +27,11 @@ class Breakpoint {
 
   /// gutters element of Breakpoint system.
   int get gutters => range.gutters;
+
+  @override
+  String toString() => 'Breakpoint(range: ${describeEnum(range)}, '
+      'window: ${describeEnum(window)}, '
+      'columns: $columns, '
+      'margins: $margins, '
+      'gutters: $gutters)';
 }
