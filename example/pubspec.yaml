@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  breakpoints:
+  breakpoints_mq:
     path: ../
 
 flutter:
