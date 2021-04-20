@@ -3,7 +3,10 @@
 /// See the breakpoint system documentation for more information.
 /// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
 enum BreakpointRange {
-  /// 0~399
+  /// 0~359
+  lessThan360,
+
+  /// 360~399
   lessThan400,
 
   /// 400~479
@@ -65,4 +68,35 @@ enum BreakpointWindow {
   /// xsmall < small < medium < large < xlarge
   ///                                     ^
   xlarge,
+}
+
+/// Breakpoint device definition for responsive design.
+/// small handset < medium handset < large handset < small tablet < large tablet
+///
+/// See the breakpoint system documentation for more information.
+/// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
+enum BreakpointDevice {
+  /// small handset < medium handset < large handset
+  ///      ^
+  smallHandset,
+
+  /// small handset < medium handset < large handset
+  ///                       ^
+  mediumHandset,
+
+  /// medium handset < large handset < small tablet
+  ///                       ^
+  largeHandset,
+
+  /// large handset < small tablet < large tablet
+  ///                      ^
+  smallTablet,
+
+  /// large handset < large tablet < desktop
+  ///                      ^
+  largeTablet,
+
+  /// large handset < large tablet < desktop
+  ///                                   ^
+  desktop,
 }

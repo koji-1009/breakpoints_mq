@@ -445,4 +445,165 @@ void main() {
       );
     });
   });
+
+  group('BreakpointTypeOperators', () {
+    test('smallHandset', () {
+      expect(
+        BreakpointDevice.smallHandset > BreakpointDevice.smallHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset >= BreakpointDevice.smallHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.smallHandset < BreakpointDevice.smallHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset <= BreakpointDevice.smallHandset,
+        true,
+      );
+
+      expect(
+        BreakpointDevice.smallHandset > BreakpointDevice.largeHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset >= BreakpointDevice.largeHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset < BreakpointDevice.largeHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.smallHandset <= BreakpointDevice.largeHandset,
+        true,
+      );
+
+      expect(
+        BreakpointDevice.smallHandset > BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset >= BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.smallHandset < BreakpointDevice.desktop,
+        true,
+      );
+      expect(
+        BreakpointDevice.smallHandset <= BreakpointDevice.desktop,
+        true,
+      );
+    });
+
+    test('largeHandset', () {
+      expect(
+        BreakpointDevice.largeHandset > BreakpointDevice.smallHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.largeHandset >= BreakpointDevice.smallHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.largeHandset < BreakpointDevice.smallHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.largeHandset <= BreakpointDevice.smallHandset,
+        false,
+      );
+
+      expect(
+        BreakpointDevice.largeHandset > BreakpointDevice.largeHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.largeHandset >= BreakpointDevice.largeHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.largeHandset < BreakpointDevice.largeHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.largeHandset <= BreakpointDevice.largeHandset,
+        true,
+      );
+
+      expect(
+        BreakpointDevice.largeHandset > BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.largeHandset >= BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.largeHandset < BreakpointDevice.desktop,
+        true,
+      );
+      expect(
+        BreakpointDevice.largeHandset <= BreakpointDevice.desktop,
+        true,
+      );
+    });
+
+    test('desktop', () {
+      expect(
+        BreakpointDevice.desktop > BreakpointDevice.smallHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.desktop >= BreakpointDevice.smallHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.desktop < BreakpointDevice.smallHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.desktop <= BreakpointDevice.smallHandset,
+        false,
+      );
+
+      expect(
+        BreakpointDevice.desktop > BreakpointDevice.largeHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.desktop >= BreakpointDevice.largeHandset,
+        true,
+      );
+      expect(
+        BreakpointDevice.desktop < BreakpointDevice.largeHandset,
+        false,
+      );
+      expect(
+        BreakpointDevice.desktop <= BreakpointDevice.largeHandset,
+        false,
+      );
+
+      expect(
+        BreakpointDevice.desktop > BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.desktop >= BreakpointDevice.desktop,
+        true,
+      );
+      expect(
+        BreakpointDevice.desktop < BreakpointDevice.desktop,
+        false,
+      );
+      expect(
+        BreakpointDevice.desktop <= BreakpointDevice.desktop,
+        true,
+      );
+    });
+  });
 }

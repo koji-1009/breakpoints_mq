@@ -5,7 +5,9 @@ import 'breakpoints_operator_ext.dart';
 extension BreakpointRangeExt on BreakpointRange {
   /// Get [BreakpointRange] from [width].
   static BreakpointRange range({required double width}) {
-    if (width < 400) {
+    if (width < 360) {
+      return BreakpointRange.lessThan360;
+    } else if (width < 400) {
       return BreakpointRange.lessThan400;
     } else if (width < 480) {
       return BreakpointRange.lessThan480;
