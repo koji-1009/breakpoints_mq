@@ -29,3 +29,18 @@ extension BreakpointTypeOperators on BreakpointWindow {
   /// Whether this [BreakpointWindow] is smaller than or equal to [other].
   bool operator <=(BreakpointWindow other) => index <= other.index;
 }
+
+/// Operator override for [BreakpointWindow].
+extension BreakpointDeviceOperators on BreakpointDevice {
+  /// Whether this [BreakpointDevice] is larger than [other].
+  bool operator >(BreakpointDevice other) => index > other.index;
+
+  /// Whether this [BreakpointDevice] is larger than or equal to [other].
+  bool operator >=(BreakpointDevice other) => index >= other.index;
+
+  /// Whether this [BreakpointDevice] is smaller than [other].
+  bool operator <(BreakpointDevice other) => index < other.index;
+
+  /// Whether this [BreakpointDevice] is smaller than or equal to [other].
+  bool operator <=(BreakpointDevice other) => index <= other.index;
+}
