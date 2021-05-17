@@ -4,7 +4,9 @@ import 'breakpoints_operator_ext.dart';
 /// Common [BreakpointScreenSize] extension.
 extension BreakpointScreenSizeExt on BreakpointScreenSize {
   /// Get [BreakpointScreenSize] from [width].
-  static BreakpointScreenSize screenSize({required double width}) {
+  static BreakpointScreenSize screenSize({
+    required double width,
+  }) {
     if (width < 600) {
       return BreakpointScreenSize.extraSmall;
     } else if (width < 905) {
@@ -19,12 +21,16 @@ extension BreakpointScreenSizeExt on BreakpointScreenSize {
   }
 
   /// Get [double] for size of body.
-  static double body({required double width}) {
+  static double body({
+    required double width,
+  }) {
     return width - margin(width: width) * 2;
   }
 
   /// Get [int] for the number of margins.
-  static double margin({required double width}) {
+  static double margin({
+    required double width,
+  }) {
     final size = screenSize(width: width);
     switch (size) {
       case BreakpointScreenSize.extraSmall:
