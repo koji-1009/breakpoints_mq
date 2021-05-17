@@ -1,5 +1,4 @@
 import 'breakpoints_enum.dart';
-import 'breakpoints_operator_ext.dart';
 
 /// Common [BreakpointScreenSize] extension.
 extension BreakpointScreenSizeExt on BreakpointScreenSize {

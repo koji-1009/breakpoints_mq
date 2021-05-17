@@ -1,3 +1,7 @@
+## [2.0.2] - 2021.05.17
+
+* Remove unused import
+
 ## [2.0.1] - 2021.05.17
 
 * Fix document
