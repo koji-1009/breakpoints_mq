@@ -28,10 +28,14 @@ class HomePage extends StatelessWidget {
     final breakpoint = data.breakpoint;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Breakpoints Demo'),
+      appBar: AppBar(
+        title: const Text('Breakpoints Demo'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: breakpoint.margin,
         ),
-        body: Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
@@ -43,26 +47,21 @@ class HomePage extends StatelessWidget {
               child: Text('Breakpoint: ${breakpoint.toString()}'),
             ),
             Expanded(
-              child: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: breakpoint.margins / 2),
-                child: GridView.count(
-                  crossAxisCount: breakpoint.columns,
-                  children: List.generate(
-                    100,
-                    (index) => Padding(
-                      padding: EdgeInsets.all(breakpoint.gutters / 2),
-                      child: Card(
-                        child: Center(
-                          child: Text('No.${index + 1}'),
-                        ),
-                      ),
+              child: GridView.count(
+                crossAxisCount: breakpoint.column,
+                children: List.generate(
+                  100,
+                  (index) => Card(
+                    child: Center(
+                      child: Text('No.${index + 1}'),
                     ),
                   ),
                 ),
               ),
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

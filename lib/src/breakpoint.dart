@@ -9,30 +9,30 @@ import 'breakpoints_enum_ext.dart';
 /// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
 class Breakpoint {
   /// Generate [Breakpoint] from [width].
-  factory Breakpoint.fromWidth({required double width}) =>
-      Breakpoint._(BreakpointRangeExt.range(width: width));
+  factory Breakpoint.fromWidth({required double width}) => Breakpoint._(width);
 
-  const Breakpoint._(this.range);
+  const Breakpoint._(this._width);
 
-  /// Breakpoint range element of Breakpoint system.
-  final BreakpointRange range;
+  final double _width;
 
-  /// window element of Breakpoint system.
-  BreakpointWindow get window => range.window;
+  /// Breakpoint screen size element of Breakpoint system.
+  BreakpointScreenSize get screenSize =>
+      BreakpointScreenSizeExt.screenSize(width: _width);
+
+  /// margin element of Breakpoint system.
+  double get margin => BreakpointScreenSizeExt.margin(width: _width);
+
+  /// body element of Breakpoint system.
+  double get body => BreakpointScreenSizeExt.body(width: _width);
 
   /// columns element of Breakpoint system.
-  int get columns => range.columns;
-
-  /// margins element of Breakpoint system.
-  int get margins => range.margins;
-
-  /// gutters element of Breakpoint system.
-  int get gutters => range.gutters;
+  int get column => screenSize.column;
 
   @override
-  String toString() => 'Breakpoint(range: ${describeEnum(range)}, '
-      'window: ${describeEnum(window)}, '
-      'columns: $columns, '
-      'margins: $margins, '
-      'gutters: $gutters)';
+  String toString() => 'Breakpoint('
+      'range: ${describeEnum(screenSize)}, '
+      'column: $column, '
+      'margin: $margin, '
+      'body: $body,'
+      ')';
 }
