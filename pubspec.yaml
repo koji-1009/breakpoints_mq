@@ -1,5 +1,5 @@
 name: breakpoints_mq
-description: A lightweight library for implementing Responsive layout grid. Provide window, columns, margings/gutters.
+description: A lightweight library for implementing Responsive layout grid. Provide body, column, marging.
 version: 1.1.0
 homepage: https://github.com/koji-1009/breakpoints_mq
 
