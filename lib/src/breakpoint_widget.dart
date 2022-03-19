@@ -1,4 +1,4 @@
-import 'package:breakpoints_mq/src/breakpoints_box_constraints_ext.dart';
+import 'package:breakpoints_mq/src/ext/breakpoints_box_constraints_ext.dart';
 import 'package:flutter/material.dart';
 
 /// A widget with padding added, depending on the constraints the widget has.

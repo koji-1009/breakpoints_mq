@@ -1,7 +1,6 @@
+import 'package:breakpoints_mq/src/breakpoint.dart';
+import 'package:breakpoints_mq/src/breakpoints_enum.dart';
 import 'package:flutter/widgets.dart';
-
-import 'breakpoint.dart';
-import 'breakpoints_enum.dart';
 
 /// [MediaQueryData] extension to get [BreakpointScreenSize].
 extension BreakpointsMediaQueryExt on MediaQueryData {
