@@ -1,3 +1,5 @@
+import 'package:example/breakpoint_demo_screen.dart';
+import 'package:example/breakpoint_widget_demo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:breakpoints_mq/breakpoints_mq.dart';
 
@@ -12,8 +14,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Breakpoints Demo',
-      theme: ThemeData.from(colorScheme: const ColorScheme.light()),
-      darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
+      theme: ThemeData.from(
+        colorScheme: const ColorScheme.light(),
+      ),
+      darkTheme: ThemeData.from(
+        colorScheme: const ColorScheme.dark(),
+      ),
       home: const HomePage(),
     );
   }
@@ -24,42 +30,46 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = MediaQuery.of(context);
-    final breakpoint = data.breakpoint;
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Breakpoints Demo'),
+        title: const Text('Breakpoints Demo Home'),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: breakpoint.margin,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text('Screen Size: ${data.size.toString()}'),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text('Breakpoint: ${breakpoint.toString()}'),
-            ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: breakpoint.column,
-                children: List.generate(
-                  100,
-                  (index) => Card(
-                    child: Center(
-                      child: Text('No.${index + 1}'),
-                    ),
-                  ),
+      body: Center(
+        child: BreakpointWidget(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(32),
                 ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const BreakpointDemoScreen(),
+                    ),
+                  );
+                },
+                child: const Text('Show breakpoint demo'),
               ),
-            )
-          ],
+              const SizedBox(
+                height: 16,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(32),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const BreakpointWidgetDemoScreen(),
+                    ),
+                  );
+                },
+                child: const Text('Show breakpoint widget demo'),
+              ),
+            ],
+          ),
         ),
       ),
     );
