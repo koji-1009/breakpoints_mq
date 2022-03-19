@@ -9,7 +9,7 @@ import 'breakpoints_enum_ext.dart';
 /// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
 class Breakpoint {
   /// Generate [Breakpoint] from [width].
-  factory Breakpoint.fromWidth({required double width}) => Breakpoint._(width);
+  factory Breakpoint.fromWidth(double width) => Breakpoint._(width);
 
   const Breakpoint._(this._width);
 
@@ -17,13 +17,13 @@ class Breakpoint {
 
   /// Breakpoint screen size element of Breakpoint system.
   BreakpointScreenSize get screenSize =>
-      BreakpointScreenSizeExt.screenSize(width: _width);
+      BreakpointScreenSizeExt.screenSize(_width);
 
   /// margin element of Breakpoint system.
-  double get margin => BreakpointScreenSizeExt.margin(width: _width);
+  double get margin => BreakpointScreenSizeExt.margin(_width);
 
   /// body element of Breakpoint system.
-  double get body => BreakpointScreenSizeExt.body(width: _width);
+  double get body => BreakpointScreenSizeExt.body(_width);
 
   /// columns element of Breakpoint system.
   int get column => screenSize.column;
