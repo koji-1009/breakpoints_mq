@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 
 import 'breakpoints_enum.dart';
 import 'breakpoints_enum_ext.dart';
@@ -10,6 +11,13 @@ import 'breakpoints_enum_ext.dart';
 class Breakpoint {
   /// Generate [Breakpoint] from [width].
   factory Breakpoint.fromWidth(double width) => Breakpoint._(width);
+
+  /// Generate [Breakpoint] from [Size].
+  factory Breakpoint.fromSize(Size size) => Breakpoint.fromWidth(size.width);
+
+  /// Generate [Breakpoint] from [BoxConstraints].
+  factory Breakpoint.fromConstraints(BoxConstraints constraints) =>
+      Breakpoint.fromWidth(constraints.maxWidth);
 
   const Breakpoint._(this._width);
 
