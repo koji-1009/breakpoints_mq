@@ -1,3 +1,13 @@
+## [2.1.0] - 2022.03.19
+
+> Note: This release has breaking changes.
+
+* BREAKING: Change `Breakpoint.fromWidth(with:)` API, please change to `Breakpoint.fromWith()`
+* Add `factory Berakpoint.fromSize()` method
+* Add `factory Berakpoint.fromConstraints()` method
+* Add extension fo `BoxConstraints`
+* Add `BreakpointWidget` widget
+
 ## [2.0.2] - 2021.05.17
 
 * Remove unused import
