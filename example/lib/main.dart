@@ -12,8 +12,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Breakpoints Demo',
-      theme: ThemeData.from(colorScheme: ColorScheme.light()),
-      darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
+      theme: ThemeData.from(colorScheme: const ColorScheme.light()),
+      darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
       home: const HomePage(),
     );
   }
