@@ -1,7 +1,7 @@
+import 'package:breakpoints_mq/src/breakpoints_enum.dart';
+import 'package:breakpoints_mq/src/ext/breakpoints_enum_ext.dart';
 import 'package:flutter/foundation.dart';
-
-import 'breakpoints_enum.dart';
-import 'breakpoints_enum_ext.dart';
+import 'package:flutter/widgets.dart';
 
 /// Entity object for Breakpoint system.
 ///
@@ -9,7 +9,14 @@ import 'breakpoints_enum_ext.dart';
 /// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
 class Breakpoint {
   /// Generate [Breakpoint] from [width].
-  factory Breakpoint.fromWidth({required double width}) => Breakpoint._(width);
+  factory Breakpoint.fromWidth(double width) => Breakpoint._(width);
+
+  /// Generate [Breakpoint] from [Size].
+  factory Breakpoint.fromSize(Size size) => Breakpoint.fromWidth(size.width);
+
+  /// Generate [Breakpoint] from [BoxConstraints].
+  factory Breakpoint.fromConstraints(BoxConstraints constraints) =>
+      Breakpoint.fromWidth(constraints.maxWidth);
 
   const Breakpoint._(this._width);
 
@@ -17,13 +24,13 @@ class Breakpoint {
 
   /// Breakpoint screen size element of Breakpoint system.
   BreakpointScreenSize get screenSize =>
-      BreakpointScreenSizeExt.screenSize(width: _width);
+      BreakpointScreenSizeExt.screenSize(_width);
 
   /// margin element of Breakpoint system.
-  double get margin => BreakpointScreenSizeExt.margin(width: _width);
+  double get margin => BreakpointScreenSizeExt.margin(_width);
 
   /// body element of Breakpoint system.
-  double get body => BreakpointScreenSizeExt.body(width: _width);
+  double get body => BreakpointScreenSizeExt.body(_width);
 
   /// columns element of Breakpoint system.
   int get column => screenSize.column;
