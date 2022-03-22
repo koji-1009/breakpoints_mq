@@ -1,3 +1,5 @@
+library breakpoints_mq;
+
 export 'src/breakpoint.dart';
 export 'src/breakpoint_widget.dart';
 export 'src/breakpoints_enum.dart';
