@@ -1,3 +1,7 @@
+## [2.1.1] - 2022.03.22
+
+* Set library arguments
+
 ## [2.1.0] - 2022.03.19
 
 > Note: This release has breaking changes.
