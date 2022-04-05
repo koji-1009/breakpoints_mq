@@ -7,10 +7,10 @@ enum BreakpointScreenSize {
   extraSmall,
 
   /// 600~904
-  smallFixBody,
+  smallScaleBody,
 
   /// 905~1239
-  smallScaleBody,
+  smallFixBody,
 
   /// 1240~1439
   medium,
