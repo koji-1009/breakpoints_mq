@@ -1,3 +1,7 @@
+## [2.1.2] - 2022.04.05
+
+* Fix enum order
+
 ## [2.1.1] - 2022.03.22
 
 * Set library arguments
