@@ -132,21 +132,21 @@ void main() {
 
       expect(
         BreakpointScreenSize.smallScaleBody > BreakpointScreenSize.smallFixBody,
-        true,
+        false,
       );
       expect(
         BreakpointScreenSize.smallScaleBody >=
             BreakpointScreenSize.smallFixBody,
-        true,
+        false,
       );
       expect(
         BreakpointScreenSize.smallScaleBody < BreakpointScreenSize.smallFixBody,
-        false,
+        true,
       );
       expect(
         BreakpointScreenSize.smallScaleBody <=
             BreakpointScreenSize.smallFixBody,
-        false,
+        true,
       );
 
       expect(
