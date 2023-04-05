@@ -1,10 +1,8 @@
 # breakpoints_mq
 
-A lightweight library for implementing [Responsive layout grid](https://material.io/design/layout/responsive-layout-grid.html). Provide body, column, margin.
+A lightweight library for implementing [window-size-classes](https://m3.material.io/foundations/layout/applying-layout/window-size-classes). Provide body, margin.
 
 ## How to use.
-
-If you wont to get more information about breakpoints, see [documents](https://material.io/design/layout/responsive-layout-grid.html#breakpoints).
 
 ---
 
@@ -32,7 +30,7 @@ Then, use `breakpoint.column`.
 
 ```dart
 GridView.count(
-  crossAxisCount: breakpoint.column,
+  crossAxisCount: 4,
   children: List.generate(
     100,
     (index) => Padding(
@@ -46,27 +44,6 @@ GridView.count(
 ),
 ```
 
-Alternatively, you can use BreakpointWidget in the Row.
-
-```dart
-Row(
-  children: [
-    Expanded(
-      flex: 1,
-      child: BreakpointWidget(
-        child: SomeWidget(),
-      ),
-    ),
-    Expanded(
-      flex: 2,
-      child: BreakpointWidget(
-        child: AnotherWiget(),
-      ),
-    ),
-  ], 
-)
-```
-
 ## Requirements
 
-- Flutter 2.0.0 or higher
+- Flutter 3.0.0 or higher

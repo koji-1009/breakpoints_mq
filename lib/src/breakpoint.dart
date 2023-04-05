@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 /// Entity object for Breakpoint system.
 ///
 /// See the breakpoint system documentation for more information.
-/// [https://material.io/design/layout/responsive-layout-grid.html#breakpoints].
+/// [https://m3.material.io/foundations/layout/applying-layout/window-size-classes].
 class Breakpoint {
   /// Generate [Breakpoint] from [width].
   factory Breakpoint.fromWidth(double width) => Breakpoint._(width);
