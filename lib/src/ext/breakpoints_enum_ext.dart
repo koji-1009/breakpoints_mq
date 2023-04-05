@@ -5,15 +5,11 @@ extension BreakpointScreenSizeExt on BreakpointScreenSize {
   /// Get [BreakpointScreenSize] from [width].
   static BreakpointScreenSize screenSize(double width) {
     if (width < 600) {
-      return BreakpointScreenSize.extraSmall;
-    } else if (width < 905) {
-      return BreakpointScreenSize.smallScaleBody;
-    } else if (width < 1240) {
-      return BreakpointScreenSize.smallFixBody;
-    } else if (width < 1440) {
+      return BreakpointScreenSize.compact;
+    } else if (width < 840) {
       return BreakpointScreenSize.medium;
     } else {
-      return BreakpointScreenSize.large;
+      return BreakpointScreenSize.expanded;
     }
   }
 
@@ -26,30 +22,12 @@ extension BreakpointScreenSizeExt on BreakpointScreenSize {
   static double margin(double width) {
     final size = screenSize(width);
     switch (size) {
-      case BreakpointScreenSize.extraSmall:
+      case BreakpointScreenSize.compact:
         return 16;
-      case BreakpointScreenSize.smallScaleBody:
-        return 32;
-      case BreakpointScreenSize.smallFixBody:
-        return (width - 840) / 2;
       case BreakpointScreenSize.medium:
-        return 200;
-      case BreakpointScreenSize.large:
-        return (width - 1040) / 2;
-    }
-  }
-
-  /// Get [int] for the number of columns.
-  int get column {
-    switch (this) {
-      case BreakpointScreenSize.extraSmall:
-        return 4;
-      case BreakpointScreenSize.smallScaleBody:
-        return 8;
-      case BreakpointScreenSize.smallFixBody:
-      case BreakpointScreenSize.medium:
-      case BreakpointScreenSize.large:
-        return 12;
+        return 24;
+      case BreakpointScreenSize.expanded:
+        return 24;
     }
   }
 }

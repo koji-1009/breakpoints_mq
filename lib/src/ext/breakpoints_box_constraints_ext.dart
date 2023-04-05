@@ -9,9 +9,6 @@ extension BreakpointsBoxConstraintsExt on BoxConstraints {
   /// Get [BreakpointScreenSize] from [BoxConstraints].
   BreakpointScreenSize get breakpointScreenSize => breakpoint.screenSize;
 
-  /// Get the [int] of column from [BoxConstraints].
-  int get breakpointColumn => breakpoint.column;
-
   /// Get the [double] of margin from [BoxConstraints].
   double get breakpointMargin => breakpoint.margin;
 

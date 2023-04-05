@@ -8,17 +8,25 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Breakpoints Demo',
       theme: ThemeData.from(
-        colorScheme: const ColorScheme.light(),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
       ),
       darkTheme: ThemeData.from(
-        colorScheme: const ColorScheme.dark(),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
       ),
       home: const HomePage(),
     );
@@ -39,10 +47,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(32),
-                ),
+              OutlinedButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -55,10 +60,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(32),
-                ),
+              OutlinedButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
