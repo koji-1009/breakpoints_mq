@@ -8,41 +8,47 @@ class BreakpointDemoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = MediaQuery.of(context);
     final breakpoint = data.breakpoint;
+    final crossAxisCount = data.size.width ~/ 150 + 1;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Breakpoint Demo'),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: breakpoint.margin,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text('Screen Size: ${data.size.toString()}'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 8,
+              horizontal: breakpoint.margin,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text('Breakpoint: ${breakpoint.toString()}'),
+            child: Text('Screen Size: ${data.size}'),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 8,
+              horizontal: breakpoint.margin,
             ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: breakpoint.column,
-                children: List.generate(
-                  100,
-                  (index) => Card(
-                    child: Center(
-                      child: Text('No.${index + 1}'),
-                    ),
+            child: Text('Breakpoint: $breakpoint'),
+          ),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.symmetric(
+                vertical: 8,
+                horizontal: breakpoint.margin,
+              ),
+              crossAxisCount: crossAxisCount,
+              children: List.generate(
+                100,
+                (index) => Card(
+                  child: Center(
+                    child: Text('No.${index + 1}'),
                   ),
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

@@ -10,9 +10,6 @@ extension BreakpointsMediaQueryExt on MediaQueryData {
   /// Get [BreakpointScreenSize] from [MediaQueryData].
   BreakpointScreenSize get breakpointScreenSize => breakpoint.screenSize;
 
-  /// Get the [int] of column from [MediaQueryData].
-  int get breakpointColumn => breakpoint.column;
-
   /// Get the [double] of margin from [MediaQueryData].
   double get breakpointMargin => breakpoint.margin;
 

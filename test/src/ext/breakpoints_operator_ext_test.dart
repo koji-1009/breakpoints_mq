@@ -4,324 +4,91 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('BreakpointScreenSizeOperators', () {
-    test('extraSmall', () {
+    test('compact', () {
       expect(
-        BreakpointScreenSize.extraSmall > BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.compact > BreakpointScreenSize.compact,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall >= BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.compact >= BreakpointScreenSize.compact,
         true,
       );
       expect(
-        BreakpointScreenSize.extraSmall < BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.compact < BreakpointScreenSize.compact,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall <= BreakpointScreenSize.extraSmall,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.extraSmall > BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall >= BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall < BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall <= BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.compact <= BreakpointScreenSize.compact,
         true,
       );
 
       expect(
-        BreakpointScreenSize.extraSmall > BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact > BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall >= BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact >= BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall < BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact < BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.extraSmall <= BreakpointScreenSize.smallFixBody,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.extraSmall > BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall >= BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall < BreakpointScreenSize.medium,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.extraSmall <= BreakpointScreenSize.medium,
+        BreakpointScreenSize.compact <= BreakpointScreenSize.medium,
         true,
       );
 
       expect(
-        BreakpointScreenSize.extraSmall > BreakpointScreenSize.large,
+        BreakpointScreenSize.compact > BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall >= BreakpointScreenSize.large,
+        BreakpointScreenSize.compact >= BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.extraSmall < BreakpointScreenSize.large,
+        BreakpointScreenSize.compact < BreakpointScreenSize.expanded,
         true,
       );
       expect(
-        BreakpointScreenSize.extraSmall <= BreakpointScreenSize.large,
-        true,
-      );
-    });
-
-    test('smallScaleBody', () {
-      expect(
-        BreakpointScreenSize.smallScaleBody > BreakpointScreenSize.extraSmall,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody >= BreakpointScreenSize.extraSmall,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody < BreakpointScreenSize.extraSmall,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody <= BreakpointScreenSize.extraSmall,
-        false,
-      );
-
-      expect(
-        BreakpointScreenSize.smallScaleBody >
-            BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody >=
-            BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody <
-            BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody <=
-            BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.compact <= BreakpointScreenSize.expanded,
         true,
       );
 
       expect(
-        BreakpointScreenSize.smallScaleBody > BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact > BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.smallScaleBody >=
-            BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact >= BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.smallScaleBody < BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.compact < BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.smallScaleBody <=
-            BreakpointScreenSize.smallFixBody,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.smallScaleBody > BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody >= BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody < BreakpointScreenSize.medium,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody <= BreakpointScreenSize.medium,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.smallScaleBody > BreakpointScreenSize.large,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody >= BreakpointScreenSize.large,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody < BreakpointScreenSize.large,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallScaleBody <= BreakpointScreenSize.large,
-        true,
-      );
-    });
-
-    test('smallFixBody', () {
-      expect(
-        BreakpointScreenSize.smallFixBody > BreakpointScreenSize.extraSmall,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody >= BreakpointScreenSize.extraSmall,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody < BreakpointScreenSize.extraSmall,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody <= BreakpointScreenSize.extraSmall,
-        false,
-      );
-
-      expect(
-        BreakpointScreenSize.smallFixBody > BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody >=
-            BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody < BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody <=
-            BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-
-      expect(
-        BreakpointScreenSize.smallFixBody > BreakpointScreenSize.smallFixBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody >= BreakpointScreenSize.smallFixBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody < BreakpointScreenSize.smallFixBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody <= BreakpointScreenSize.smallFixBody,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.smallFixBody > BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody >= BreakpointScreenSize.medium,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody < BreakpointScreenSize.medium,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody <= BreakpointScreenSize.medium,
-        true,
-      );
-
-      expect(
-        BreakpointScreenSize.smallFixBody > BreakpointScreenSize.large,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody >= BreakpointScreenSize.large,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody < BreakpointScreenSize.large,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.smallFixBody <= BreakpointScreenSize.large,
+        BreakpointScreenSize.compact <= BreakpointScreenSize.medium,
         true,
       );
     });
 
     test('medium', () {
       expect(
-        BreakpointScreenSize.medium > BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.medium > BreakpointScreenSize.compact,
         true,
       );
       expect(
-        BreakpointScreenSize.medium >= BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.medium >= BreakpointScreenSize.compact,
         true,
       );
       expect(
-        BreakpointScreenSize.medium < BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.medium < BreakpointScreenSize.compact,
         false,
       );
       expect(
-        BreakpointScreenSize.medium <= BreakpointScreenSize.extraSmall,
-        false,
-      );
-
-      expect(
-        BreakpointScreenSize.medium > BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.medium >= BreakpointScreenSize.smallScaleBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.medium < BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.medium <= BreakpointScreenSize.smallScaleBody,
-        false,
-      );
-
-      expect(
-        BreakpointScreenSize.medium > BreakpointScreenSize.smallFixBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.medium >= BreakpointScreenSize.smallFixBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.medium < BreakpointScreenSize.smallFixBody,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.medium <= BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.medium <= BreakpointScreenSize.compact,
         false,
       );
 
@@ -343,106 +110,176 @@ void main() {
       );
 
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.large,
+        BreakpointScreenSize.medium > BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.medium >= BreakpointScreenSize.large,
+        BreakpointScreenSize.medium >= BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.medium < BreakpointScreenSize.large,
+        BreakpointScreenSize.medium < BreakpointScreenSize.expanded,
         true,
       );
       expect(
-        BreakpointScreenSize.medium <= BreakpointScreenSize.large,
+        BreakpointScreenSize.medium <= BreakpointScreenSize.expanded,
+        true,
+      );
+
+      expect(
+        BreakpointScreenSize.medium > BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.medium >= BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.medium < BreakpointScreenSize.medium,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.medium <= BreakpointScreenSize.medium,
         true,
       );
     });
 
-    test('large', () {
+    test('expanded', () {
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.expanded > BreakpointScreenSize.compact,
         true,
       );
       expect(
-        BreakpointScreenSize.large >= BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.expanded >= BreakpointScreenSize.compact,
         true,
       );
       expect(
-        BreakpointScreenSize.large < BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.expanded < BreakpointScreenSize.compact,
         false,
       );
       expect(
-        BreakpointScreenSize.large <= BreakpointScreenSize.extraSmall,
+        BreakpointScreenSize.expanded <= BreakpointScreenSize.compact,
         false,
       );
 
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.expanded > BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.large >= BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.expanded >= BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.large < BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.expanded < BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.large <= BreakpointScreenSize.smallScaleBody,
+        BreakpointScreenSize.expanded <= BreakpointScreenSize.medium,
         false,
       );
 
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.smallFixBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.large >= BreakpointScreenSize.smallFixBody,
-        true,
-      );
-      expect(
-        BreakpointScreenSize.large < BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.expanded > BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.large <= BreakpointScreenSize.smallFixBody,
+        BreakpointScreenSize.expanded >= BreakpointScreenSize.expanded,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.expanded < BreakpointScreenSize.expanded,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.expanded <= BreakpointScreenSize.expanded,
+        true,
+      );
+
+      expect(
+        BreakpointScreenSize.expanded > BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.expanded >= BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.expanded < BreakpointScreenSize.medium,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.expanded <= BreakpointScreenSize.medium,
+        true,
+      );
+    });
+
+    test('medium', () {
+      expect(
+        BreakpointScreenSize.medium > BreakpointScreenSize.compact,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.medium >= BreakpointScreenSize.compact,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.medium < BreakpointScreenSize.compact,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.medium <= BreakpointScreenSize.compact,
         false,
       );
 
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.medium,
+        BreakpointScreenSize.medium > BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.large >= BreakpointScreenSize.medium,
+        BreakpointScreenSize.medium >= BreakpointScreenSize.medium,
         true,
       );
       expect(
-        BreakpointScreenSize.large < BreakpointScreenSize.medium,
+        BreakpointScreenSize.medium < BreakpointScreenSize.medium,
         false,
       );
       expect(
-        BreakpointScreenSize.large <= BreakpointScreenSize.medium,
+        BreakpointScreenSize.medium <= BreakpointScreenSize.medium,
         false,
       );
 
       expect(
-        BreakpointScreenSize.large > BreakpointScreenSize.large,
-        false,
-      );
-      expect(
-        BreakpointScreenSize.large >= BreakpointScreenSize.large,
+        BreakpointScreenSize.medium > BreakpointScreenSize.expanded,
         true,
       );
       expect(
-        BreakpointScreenSize.large < BreakpointScreenSize.large,
+        BreakpointScreenSize.medium >= BreakpointScreenSize.expanded,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.medium < BreakpointScreenSize.expanded,
         false,
       );
       expect(
-        BreakpointScreenSize.large <= BreakpointScreenSize.large,
+        BreakpointScreenSize.medium <= BreakpointScreenSize.expanded,
+        false,
+      );
+
+      expect(
+        BreakpointScreenSize.medium > BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.medium >= BreakpointScreenSize.medium,
+        true,
+      );
+      expect(
+        BreakpointScreenSize.medium < BreakpointScreenSize.medium,
+        false,
+      );
+      expect(
+        BreakpointScreenSize.medium <= BreakpointScreenSize.medium,
         true,
       );
     });

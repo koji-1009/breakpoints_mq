@@ -32,13 +32,9 @@ class Breakpoint {
   /// body element of Breakpoint system.
   double get body => BreakpointScreenSizeExt.body(_width);
 
-  /// columns element of Breakpoint system.
-  int get column => screenSize.column;
-
   @override
   String toString() => 'Breakpoint('
       'range: ${describeEnum(screenSize)}, '
-      'column: $column, '
       'margin: $margin, '
       'body: $body,'
       ')';
