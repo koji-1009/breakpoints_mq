@@ -1,3 +1,7 @@
+## [3.1.0] - 2023.06.28
+
+* Add `Size` and `BuildContext` extension
+
 ## [3.0.0] - 2023.04.05
 
 * Migrate to M3
