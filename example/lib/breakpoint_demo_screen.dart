@@ -6,9 +6,9 @@ class BreakpointDemoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = MediaQuery.of(context);
-    final breakpoint = data.breakpoint;
-    final crossAxisCount = data.size.width ~/ 150 + 1;
+    final size = MediaQuery.sizeOf(context);
+    final breakpoint = size.breakpoint;
+    final crossAxisCount = size.width ~/ 150 + 1;
 
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +22,7 @@ class BreakpointDemoScreen extends StatelessWidget {
               vertical: 8,
               horizontal: breakpoint.margin,
             ),
-            child: Text('Screen Size: ${data.size}'),
+            child: Text('Screen Size: $size'),
           ),
           Padding(
             padding: EdgeInsets.symmetric(
